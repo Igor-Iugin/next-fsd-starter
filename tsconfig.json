@@ -1,0 +1,54 @@
+{
+	"compilerOptions": {
+		"types": [
+			"node",
+			"jest",
+			"@testing-library/jest-dom"
+		],
+		"target": "ES2022",
+		"useDefineForClassFields": true,
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "preserve",
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"@/*": [
+				"./src/*"
+			]
+		},
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			},
+			{
+				"name": "next"
+			}
+		],
+		"allowJs": true,
+		"incremental": true,
+		"esModuleInterop": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"src/**/*.(ts|tsx)",
+		".next/types/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

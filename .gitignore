@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+dist
+dist-ssr
+*.local
+
+# Dependency directories
+node_modules/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Next.js build output
+.next
+out
+
+# env files
+.env.*
+!.env.example
+
+# yarn v2
+.yarn
+.pnp.*
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
