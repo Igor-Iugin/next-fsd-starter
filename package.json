@@ -8,7 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"analyze": "ANALYZE=true next build",
-		"lint": "next lint",
+		"lint:next": "next lint",
 		"lint:types": "tsc --noEmit",
 		"test": "jest",
 		"test:watch": "jest --watch"
@@ -77,6 +77,12 @@
 		"ts-jest": "^29.1.2",
 		"typescript": "^5.2.2",
 		"typescript-plugin-css-modules": "^4.1.1",
-		"zustand": "^4.5.2"
+		"zustand": "^4.5.2",
+		"lint-staged": "^15.2.10",
+		"husky": "^8.0.0",
+		"stylelint": "^16.10.0",
+		"stylelint-config-clean-order": "^6.1.0",
+		"stylelint-config-standard": "^36.0.1",
+		"stylelint-order": "^6.0.4"
 	}
 }

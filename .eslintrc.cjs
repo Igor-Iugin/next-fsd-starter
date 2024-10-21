@@ -8,22 +8,40 @@ const FS_LAYERS = [
 	'core'
 ]
 
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
 	env: {browser: true, es2020: true},
 	extends: [
-		'plugin:@next/next/recommended',
+		'next',
+		'next/core-web-vitals',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:jest/recommended',
-		'plugin:boundaries/recommended'
+		'plugin:boundaries/recommended',
+		'plugin:lodash-fp/recommended'
 	],
 	overrides: [{
 		files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
 		extends: ['plugin:testing-library/react']
 	}],
+	ignorePatterns: [
+		'node_modules',
+		'.next'
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		sourceType: 'module'
 	},
-	plugins: ['testing-library', 'jest', 'boundaries', 'import', '@tanstack/query'],
+	plugins: [
+		'@typescript-eslint',
+		'testing-library',
+		'jest',
+		'boundaries',
+		'import',
+		'@tanstack/query',
+		'lodash-fp'
+	],
 	settings: {
 		'import/resolver': {
 			'typescript': {
@@ -31,7 +49,6 @@ module.exports = {
 			}
 		},
 		'boundaries/include': ['src/**/*'],
-		'boundaries/ignore': ['src/_old/**/*'],
 		'boundaries/elements': [
 			{
 				type: 'app',
@@ -74,8 +91,14 @@ module.exports = {
 		'semi': [2, 'never'],
 		'no-tabs': [2, {allowIndentationTabs: true}],
 		'max-len': [0, {code: 120}],
+		'indent': ['error', 'tab'],
 		'jsx-quotes': [2, 'prefer-single'],
 		'quotes': [2, 'single'],
+		'object-curly-spacing': ['error', 'never'],
+		'@typescript-eslint/consistent-type-imports': ['error', {
+			fixStyle: 'separate-type-imports',
+			prefer: 'type-imports',
+		}],
 
 		// Import ordering
 		'import/order': [2, {
@@ -126,7 +149,7 @@ module.exports = {
 				},
 				{
 					target: [['core', {'core-segment': 'config'}]],
-					allow: '*.(ts|tsx)',
+					allow: '*.(ts|tsx)'
 				},
 				{
 					target: [['core', {'core-segment': 'api'}]],
